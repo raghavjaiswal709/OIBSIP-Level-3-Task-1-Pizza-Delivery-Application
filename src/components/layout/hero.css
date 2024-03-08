@@ -1,0 +1,44 @@
+.heroheadingdiv{
+    width: 600px;
+    position: relative;
+    top: -60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.subheading{
+    font-size: 1.4rem;
+    font-weight: 600;
+    max-width: 500px;
+}
+
+.spansubtitle{
+    font-size: 2rem;
+    font-weight: 900;
+    color: #A7343F;
+}
+
+.herobuttondiv{
+    display: flex;
+    gap: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+.orderbut{
+    background-color: #A7343F;
+    padding: 10px 25px;
+    color: white;
+    
+}
+
+.lernbutt{
+    position: relative;
+    top: -3px;
+    font-size: 1.12rem;
+}
+
+.container{
+    margin-top: 80px;
+}
