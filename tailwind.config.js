@@ -10,6 +10,7 @@ module.exports = {
       colors:{
         primary:'#A7343F',
         background:'#DDDBDB',
+        menu:'#8b8b8b',
         cards:'#232323'
       }
     },
