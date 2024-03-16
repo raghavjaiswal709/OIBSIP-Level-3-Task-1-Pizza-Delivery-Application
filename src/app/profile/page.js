@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import UserTabs from '../../components/layout/Tabs'
+import EditableImage from "../../components/layout/EditableImage"
 
 export default function ProfilePage() {
   const session = useSession();
@@ -68,32 +69,7 @@ export default function ProfilePage() {
     });
   }
 
-  async function handleFileChange(ev) {
-    const files = ev.target.files;
-    if (files?.length === 1) {
-      const data = new FormData();
-      data.set("file", files[0]);
 
-      await toast.promise(
-        fetch("/api/upload", {
-          method: "POST",
-          body: data,
-        }).then((response) => {
-          if (response.ok) {
-            return response.json().then((link) => {
-              setImage(link);
-            });
-          }
-          throw new Error("Something went wrong");
-        }),
-        {
-          loading: "Uploading",
-          success: "Upload Complete",
-          error: "Upload error",
-        }
-      );
-    }
-  }
 
   if (status === "loading" || !profileFetched) {
     return "Loading...";
@@ -111,25 +87,7 @@ export default function ProfilePage() {
         <div className="flex gap-4 ">
             
           <div className="flex flex-col gap-7 max-w-[120px] ">
-            {image && (
-              <Image
-                src={image}
-                className="rounded-lg"
-                width={425}
-                height={425}
-                alt="profile photo"
-              ></Image>
-            )}
-            <label>
-              <input
-                type="file"
-                className="hidden"
-                onChange={handleFileChange}
-              />
-              <span className="block border rounded-lg p-2 text-center border-gray-700 cursor-pointer">
-                Edit
-              </span>
-            </label>
+            <EditableImage link={image} setLink={setImage} />
             {/* <button type="button" className="">Edit</button> */}
           </div>
           <form className="grow" onSubmit={handleProfileInfoUpdate}>
