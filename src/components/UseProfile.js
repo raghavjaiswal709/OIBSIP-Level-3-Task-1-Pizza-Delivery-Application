@@ -1,4 +1,3 @@
-import UserTabs from "@/components/layout/Tabs";
 import { useEffect, useState } from "react";
 
 export function useProfile(){
