@@ -1,25 +1,46 @@
-import "./homeMenu.css"
-import pizza1img from "../../../public/pizza1.svg"
-import Image from "next/image"
-import MenuItem from "../menu/MenuItem"
-import SectionHeaders from "./SectionHeaders"
+'use client';
+import SectionHeaders from "@/components/layout/SectionHeaders";
+import MenuItem from "@/components/menu/MenuItem";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function HomeMenu() {
-    return(
-        <div className="maincontainer">
-            <SectionHeaders subHeader={'Checkout'} 
-            mainHeader={'Menu'}
-            />
-          
-
-            <div className="grid grid-cols-4 mt-10 gap-7">
-                <MenuItem />
-                <MenuItem />
-                <MenuItem />
-                <MenuItem />
-                
-            </div>
+  const [bestSellers, setBestSellers] = useState([]);
+  
+  useEffect(() => {
+    fetch('/api/menu-items')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then(menuItems => {
+        setBestSellers(menuItems.slice(-3));
+      })
+      .catch(error => {
+        console.error('Error fetching menu items:', error);
+      });
+  }, []);
+  
+  return (
+    <section className="">
+      <div className="absolute left-0 right-0 w-full justify-start">
+        <div className="absolute left-0 -top-[70px] text-left -z-10">
         </div>
-        
-    )
+        <div className="absolute -top-[100px] right-0 -z-10">
+        </div>
+      </div>
+      <div className="text-center mb-4">
+        <SectionHeaders
+          subHeader={'check out'}
+          mainHeader={'Our Best Sellers'} />
+      </div>
+      <div className="grid sm:grid-cols-3 gap-4">
+        {bestSellers?.length > 0 && bestSellers.map(item => (
+          <MenuItem key={item._id} {...item} />
+        ))}
+      </div>
+    </section>
+  );
 }

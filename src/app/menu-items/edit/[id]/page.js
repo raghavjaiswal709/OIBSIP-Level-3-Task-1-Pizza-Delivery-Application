@@ -3,7 +3,7 @@ import DeleteButton from "@/components/DeleteButton";
 import Left from "@/components/icons/Left";
 import EditableImage from "@/components/layout/EditableImage";
 import MenuItemForm from "@/components/layout/MenuItemForm";
-import UserTabs from "@/components/layout/Tabs";
+import UserTabs from "@/components/layout/UserTabs";
 import {useProfile} from "@/components/UseProfile";
 import Link from "next/link";
 import {redirect, useParams} from "next/navigation";
@@ -71,17 +71,17 @@ export default function EditMenuItemPage() {
     setRedirectToItems(true);
   }
 
-//   if (redirectToItems) {
-//     return redirect('/menu-items');
-//   }
+  if (redirectToItems) {
+    return redirect('/menu-items');
+  }
 
-//   if (loading) {
-//     return 'Loading user info...';
-//   }
+  if (loading) {
+    return 'Loading user info...';
+  }
 
-//   if (!data.admin) {
-//     return 'Not an admin.';
-//   }
+  if (!data.admin) {
+    return 'Not an admin.';
+  }
 
   return (
     <section className="mt-8">

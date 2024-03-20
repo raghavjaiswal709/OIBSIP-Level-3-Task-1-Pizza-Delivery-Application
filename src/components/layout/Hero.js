@@ -1,22 +1,29 @@
+import Right from "@/components/icons/Right";
 import Image from "next/image";
-import pizzahomeimage from '../../../public/pizzahome.svg';
-import "./hero.css"
-import Link from "next/link";
-import Right from "../icons/Right";
-export default function Hero(){
-    return(
-        <>
-        <div className="flex items-center justify-between max-w-7xl mx-auto container ">
-            <div className=" heroheadingdiv">
-         <h1 className="text-6xl text-gray-900 font-bold 	"> Feeling craving for the perfect slice?</h1>
-         <p className="subheading">Order mouthwatering <span className="spansubtitle"> Pizzas </span> online for delivery or pickup.</p>
-         <div className="herobuttondiv">
-         <button className="orderbut flex gap-2 items-center rounded-full">Order Now <Right />  </button>
-         <button className=" lernbutt flex gap-2 items-center ">Learn More <Right /> </button>
-         </div>
-         </div>
-         <Image src={pizzahomeimage} />
-         </div>
-        </>
-    )
+import "../layout/hero.css"
+
+export default function Hero() {
+  return (
+    <section className="hero md:mt-14">
+      <div className="py-8 md:py-12">
+        <div className="flex gap-6 flex-col">
+      <h1 className="text-6xl text-gray-900 font-bold 	"> Feeling craving for the perfect slice?</h1>
+      <p className="subheading">Order mouthwatering <span className="spansubtitle"> Pizzas </span> online for delivery or pickup.</p>
+      </div>
+        <div className="flex gap-4 mt-16 text-sm">
+          <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
+            Order now
+            <Right />
+          </button>
+          <button className="flex items-center border-0 gap-2 py-2 text-gray-600 font-semibold">
+            Learn more
+            <Right />
+          </button>
+        </div>
+      </div>
+      <div className="relative hidden ml-32 md:block">
+        <Image src={'/pizzahome.svg'} layout={'fill'} objectFit={'contain'} alt={'pizza'} className="scale-110" />
+      </div>
+    </section>
+  );
 }
