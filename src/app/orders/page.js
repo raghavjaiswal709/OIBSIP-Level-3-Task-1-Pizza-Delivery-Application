@@ -48,9 +48,9 @@ export default function OrdersPage() {
               <div className="grow">
                 <div className="flex gap-2 items-center mb-1">
                   <div className="grow">{order.userEmail}</div>
-                  <div className="text-gray-500 text-sm">{dbTimeForHuman(order.createdAt)}</div>
+                  <div className="text-gray-100 text-sm">{dbTimeForHuman(order.createdAt)}</div>
                 </div>
-                <div className="text-gray-500 text-xs">
+                <div className="text-gray-100 text-xs">
                   {order.cartProducts.map(p => p.name).join(', ')}
                 </div>
               </div>

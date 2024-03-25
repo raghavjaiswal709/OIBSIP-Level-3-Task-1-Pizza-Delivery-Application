@@ -38,7 +38,7 @@ export default function UsersPage() {
                 {!!user.name && (<span>{user.name}</span>)}
                 {!user.name && (<span className="italic">No name</span>)}
               </div>
-              <span className="text-gray-500">{user.email}</span>
+              <span className="text-gray-100">{user.email}</span>
             </div>
             <div>
               <Link className="button" href={'/users/'+user._id}>

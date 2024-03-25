@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primary:'#222831',
-        background:'#EEEEEE',
-        menu:'#8b8b8b',
+        primary:'#E78895',
+        background:'#202020',
+        menu12233 :'#BED1CF',
         cards:'#232323'
       }
     },

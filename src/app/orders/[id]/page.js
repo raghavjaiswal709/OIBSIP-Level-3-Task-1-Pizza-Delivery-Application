@@ -53,7 +53,7 @@ export default function OrderPage() {
             {order.cartProducts.map(product => (
               <CartProduct key={product._id} product={product} />
             ))}
-            <div className="text-right py-2 text-gray-500">
+            <div className="text-right py-2 text-gray-100">
               Subtotal:
               <span className="text-black font-bold inline-block w-8">₹{subtotal}</span>
               <br />

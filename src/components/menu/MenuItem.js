@@ -68,12 +68,12 @@ export default function MenuItem(menuItem) {
                 width={300} height={200}
                 className="mx-auto" />
               <h2 className="text-lg font-bold text-center mb-2">{name}</h2>
-              <p className="text-center text-gray-500 text-sm mb-2">
+              <p className="text-center text-gray-100 text-sm mb-2">
                 {description}
               </p>
               {sizes?.length > 0 && (
                 <div className="py-2">
-                  <h3 className="text-center text-gray-700">Pick your size</h3>
+                  <h3 className="text-center text-gray-100">Pick your size</h3>
                   {sizes.map(size => (
                     <label
                       key={size._id}
@@ -90,7 +90,7 @@ export default function MenuItem(menuItem) {
               )}
               {extraIngredientPrices?.length > 0 && (
                 <div className="py-2">
-                  <h3 className="text-center text-gray-700">Any extras?</h3>
+                  <h3 className="text-center text-gray-100">Any extras?</h3>
                   {extraIngredientPrices.map(extraThing => (
                     <label
                       key={extraThing._id}

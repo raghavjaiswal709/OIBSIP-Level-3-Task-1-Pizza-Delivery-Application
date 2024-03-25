@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <Toaster />
             <Header />
             {children}
-            <footer className="border-t p-8 text-center text-gray-500 mt-16">
+            <footer className="border-t p-8 text-center text-gray-100 mt-16">
               developed with ❤️ by Raghav <br></br>
               &copy; 2023 All rights reserved
 

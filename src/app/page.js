@@ -13,7 +13,7 @@ export default function Home() {
           subHeader={'Our story'}
           mainHeader={'About us'}
         />
-        <div className="text-gray-500 max-w-md mx-auto mt-4 flex flex-col gap-4">
+        <div className="text-gray-100 max-w-md mx-auto mt-4 flex flex-col gap-4">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni minima odit recusandae. Illum ipsa non repudiandae? Eum ipsam iste quos suscipit tempora? Aperiam esse fugiat inventore laboriosam officiis quam rem!
           </p>
@@ -27,7 +27,7 @@ export default function Home() {
           mainHeader={'Contact us'}
         />
         <div className="mt-8">
-          <a className="text-4xl underline text-gray-500" href="tel:+46738123123">
+          <a className="text-4xl underline text-gray-100" href="tel:+46738123123">
             +91 8709411709
           </a>
         </div>

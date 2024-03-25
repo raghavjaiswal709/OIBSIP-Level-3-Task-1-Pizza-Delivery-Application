@@ -77,13 +77,13 @@ export default function Header() {
         </div>
       )}
       <div className="hidden md:flex items-center justify-between">
-        <nav className="flex items-center gap-8 text-gray-500 font-semibold">
+        <nav className="flex items-center gap-8 text-gray-100 font-semibold">
           <Link className="text-primary font-bold text-3xl" href={'/'}>
             Tandoori Twist
           </Link>
           
         </nav>
-        <nav className="flex items-center gap-4 text-gray-500 font-semibold">
+        <nav className="flex items-center gap-4 text-gray-100 font-semibold">
           <div className="flex gap-7 mr-32">
         <Link href={'/'}>Home</Link>
           <Link href={'/menu'}>Menu</Link>
