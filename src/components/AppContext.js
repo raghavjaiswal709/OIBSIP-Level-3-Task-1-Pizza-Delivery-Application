@@ -34,15 +34,27 @@ export function AppProvider({children}) {
     saveCartProductsToLocalStorage([]);
   }
 
-  function removeCartProduct(indexToRemove) {
+  function removeCartProduct(productIdToRemove) {
     setCartProducts(prevCartProducts => {
-      const newCartProducts = prevCartProducts
-        .filter((v,index) => index !== indexToRemove);
+      const newCartProducts = prevCartProducts.filter(product => product.id !== productIdToRemove);
       saveCartProductsToLocalStorage(newCartProducts);
       return newCartProducts;
     });
     toast.success('Product removed');
   }
+  
+
+
+// function removeCartProduct(indexToRemove) {
+//   setCartProducts(prevCartProducts => {
+//     const newCartProducts = prevCartProducts
+//       .filter((v,index) => index !== indexToRemove);
+//     saveCartProductsToLocalStorage(newCartProducts);
+//     return newCartProducts;
+//   });
+//   toast.success('Product removed');
+// }
+
 
   function saveCartProductsToLocalStorage(cartProducts) {
     if (ls) {
