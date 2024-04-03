@@ -40,8 +40,8 @@ export default function OrderPage() {
       <div className="text-center">
         <SectionHeaders mainHeader="Your order" />
         <div className="mt-4 mb-8">
-          <p>Thanks for your order.</p>
-          <p>We will call you when your order will be on the way.</p>
+          <p className="text-gray-200">Thanks for your order....❤️❤️</p>
+          <p className="text-gray-200">We will call you when your order will be on the way.</p>
         </div>
       </div>
       {loadingOrder && (
@@ -53,15 +53,15 @@ export default function OrderPage() {
             {order.cartProducts.map(product => (
               <CartProduct key={product._id} product={product} />
             ))}
-            <div className="text-right py-2 text-gray-100">
+            <div className="text-right py-2 text-gray-400">
               Subtotal:
-              <span className="text-black font-bold inline-block w-8">₹{subtotal}</span>
+              <span className="text-gray-200 font-bold inline-block w-8">₹{subtotal}</span>
               <br />
               Delivery:
-              <span className="text-black font-bold inline-block w-8">₹5</span>
+              <span className="text-gray-200 font-bold inline-block w-8">₹5</span>
               <br />
               Total:
-              <span className="text-black font-bold inline-block w-8">
+              <span className="text-gray-200 font-bold inline-block w-8">
                 ₹{subtotal + 5}
               </span>
             </div>
